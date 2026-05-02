@@ -14,13 +14,15 @@ const ProfilePopupContent = (props: Record<string, any> & PublicAccount & {
   return (
     <div className="text-left" style={props.style}>
       {props.splash &&
-        <div className="h-7 w-full" aria-hidden style={{
+        <div className="h-7 w-full -mb-7" aria-hidden style={{
           backgroundImage: `url(${props.splash})`,
           backgroundSize: "cover",
           backgroundPosition: "center"
         }} />
       }
-      <div className="p-1 flex flex-col gap-1">
+      <div className="p-1 pt-3 flex flex-col gap-1" style={{
+        backgroundImage: `linear-gradient(180deg, transparent, var(--background) 7rem)`
+      }}>
         <div className="flex gap-1">
           <img className="rounded-full w-6 h-6" src={props.avatar} alt={props.displayName + "'s avatar"} />
           <div>
