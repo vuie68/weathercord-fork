@@ -25,10 +25,12 @@ const GUI = () => {
 
   return (
     <>
-      <UserIndicator className="w-20" avatar={"/avatar.png"} splash={"/banner.png"} canEdit {...account} setModal={setModal} />
-      <Prompt className="absolute bottom-1 left-22" style={{
-        width: "calc(100vw - 23rem)"
-      }} />
+      <div className="contents" inert={modal !== null}>
+        <UserIndicator className="w-20" avatar={"/avatar.png"} splash={"/banner.png"} canEdit {...account} setModal={setModal} />
+        <Prompt className="absolute bottom-1 left-22" style={{
+          width: "calc(100vw - 23rem)"
+        }} />
+      </div>
 
       {modal === ModalType.AccountSettings &&
         <AccountSettingsModal closeModal={() => setModal(null)} account={account} setAccount={setAccount} />
