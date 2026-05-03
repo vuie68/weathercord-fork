@@ -22,6 +22,7 @@ export async function GET(_: Request) {
     admin: !!account.admin,
     bio: nullish(account.bio),
     displayName: nullish(account.displayName),
+    email: account.email,
     id: account.id,
     joined: account.joined,
     nameFont: nullish(account.nameFont),
