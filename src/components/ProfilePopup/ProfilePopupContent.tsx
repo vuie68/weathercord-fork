@@ -8,8 +8,6 @@ import { ConnectionType, type PublicAccount } from "@/db/schema";
 import UsernameIDSwitcher from "./UsernameIDSwitcher";
 
 const ProfilePopupContent = (props: Record<string, any> & PublicAccount & {
-  avatar: string,
-  banner?: string,
   canEdit?: boolean
 }) => {
   let accent1 = props.accent1;
@@ -38,7 +36,7 @@ const ProfilePopupContent = (props: Record<string, any> & PublicAccount & {
         backgroundImage: `linear-gradient(180deg, transparent, ${accent1 ?? "var(--background)"} 7rem, ${accent2 ?? "var(--background)"})`
       }}>
         <div className="flex gap-1">
-          <img className="rounded-full w-6 h-6" src={props.avatar.concat("?size=100")} alt={props.displayName + "'s avatar"} />
+          <img className="rounded-full w-6 h-6 bg-black" src={props.avatar} alt={props.displayName + "'s avatar"} />
           <div>
             <div className="text-2xl font-bold" style={{
               fontFamily: props.nameFont ?? "inherit"

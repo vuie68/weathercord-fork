@@ -149,6 +149,8 @@ const ProfileTab = (props: {
           accent1={customAccent ? accent1 : null}
           accent2={customAccent ? accent2 : null}
           admin={props.account.admin}
+          avatar={avatarPreviewURL}
+          banner={bannerPreviewURL}
           bio={nullish(bio)}
           connections={props.account.connections}
           displayName={nullish(displayName)}
@@ -157,8 +159,6 @@ const ProfileTab = (props: {
           nameFont={nullish(nameFont)}
           pronouns={nullish(pronouns)}
           username={username}
-          avatar={avatarPreviewURL}
-          banner={bannerPreviewURL}
         />
       </Box>
     </div>
