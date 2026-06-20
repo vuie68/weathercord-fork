@@ -2,18 +2,22 @@
 
 import { l10nValue } from "@/lib/l10n.generated";
 import { localize } from "./localize";
+import { ReactNode } from "react";
+import reactStringReplace from "react-string-replace";
 
 const DefaultMessage = (props: {
   id: l10nValue,
-  values?: Record<string, string>
+  values?: Record<string, ReactNode | string>
 }) => {
-  let data = localize(props.id);
+  let data: string | ReactNode[] = localize(props.id);
   for (const key in props.values) {
-    data = data.replaceAll(`{{${key}}}`, props.values[key]);
+    data = reactStringReplace(data, `{{${key}}}`, (_, i) => (
+      <span key={Math.random()}>
+        {props.values?.[key]}
+      </span>
+    ));
   }
-  return (
-    <>{data}</>
-  );
+  return data;
 };
 
 export const defaultMessage = (id: l10nValue, values?: Record<string, string>) => {

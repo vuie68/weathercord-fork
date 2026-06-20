@@ -51,8 +51,10 @@ const AboutTab = () => {
       <p><DefaultMessage
         id="settings.tab.about.contributors.paragraph-1"
         values={{
-          APP_NAME
-        }}
+          APP_NAME,
+          link: (
+            <a href="https://github.com/raynepaws/weathercord" className="link" target="_blank"><DefaultMessage id="settings.tab.about.contributors.paragraph-1.link-1" /></a>
+          )}}
       /></p>
       <div className="grid grid-cols-2 mt-1">
         {contributors.map((contributor, index) => {

@@ -238,6 +238,11 @@ span.error {
   animation: spin 0.9s linear infinite;
 }
 
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 @keyframes spin {
   0% {
     rotate: 0deg;
